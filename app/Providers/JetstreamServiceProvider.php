@@ -23,7 +23,7 @@ class JetstreamServiceProvider extends ServiceProvider
     }
 
     /**
-     * Bootstrap any application services.
+     * Bootstrap any application services.  
      */
     public function boot(): void
     {
@@ -57,5 +57,15 @@ class JetstreamServiceProvider extends ServiceProvider
             'create',
             'update',
         ])->description('Editor users have the ability to read, create, and update.');
+
+        Jetstream::permissions([
+            'post:create',
+            'post:read',
+            'post:update',
+            'post:delete',
+        ]);
     }
+
+
+
 }
